@@ -1,0 +1,280 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --bg-color: #ffffff;
+    --color-texto: rgb(6, 6, 97);
+    --fuente-principal: 2.2rem;
+    --fuente-p: 1.1rem; 
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--color-texto);
+}
+
+header{
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    position: fixed;
+
+    background: var(--bg-color);
+    box-shadow: 0px 2px 18px 0 rgb(129 162 182 / 20%);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    transition: 0.5s;
+    padding: 25px 8%;
+} 
+
+.logo{
+    color: var(--color-texto);
+    font-size: var(--fuente-principal);
+    font-weight: 600;
+    line-height: 0.8;
+}
+
+#menu{     
+    font-size: 38px;
+	color: var(--color-texto);
+	z-index: 10001;
+	display: none;
+}
+
+.navBar{
+    display: flex;
+}
+
+.navBar a{
+    margin: 0 10px;
+    padding: 10px 15px;
+    font-weight: 600;
+    font-size: var(--fuente-p);
+    color: var(--color-texto);
+    transition: all .40s ease;
+}
+
+.navBar a:hover{
+    background: var(--color-texto);
+    color: #fff;
+    border-radius: 5px; 
+}
+
+.iconos i{
+    margin-left: 15px;
+    font-size: 22px;
+    color: var(--color-texto);
+}
+
+.iconos i:hover{
+    opacity: 0.5;
+}
+
+/* Sección tarjetas de producto */ 
+
+section{
+    padding: 100px 8%;
+}
+
+.contenido{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, auto));
+    align-items: center;
+    gap: 2rem;
+    padding-top: 2rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.caja{
+    background: transparent;
+    padding: 0px 20px 10px 20px;
+    box-shadow: 5px 30px 56.1276px rgb(55 55 55 / 12%);
+    border-radius: 15px;
+    transition: all .30s ease;
+    position: relative; 
+}
+
+.caja h4{
+    font-size: 18px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.caja h5{
+    font-size: 12px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.caja .carrito i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35px;
+    height: 35px;
+
+    background: var(--color-texto);
+    color: var(--bg-color);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.caja:hover{
+    transform: translateY(-15px);
+}
+
+/* Sección sobre nosotros */ 
+
+.nosotros{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.nosotros_contenido{
+    text-align: center;
+
+}
+
+.nosotros_contenido h2{
+    font-size: var(--fuente-principal);
+    margin-bottom: 30px;
+}
+
+.nosotros_contenido p{
+    font-size: var(--fuente-p);
+    color: var(--color-texto);
+    font-weight: 600;
+    line-height: 30px;
+    max-width: 600px;
+}
+
+/* Sección contacto - footer */ 
+
+.contacto{
+    background: var(--color-texto);
+    padding: 80px 15%;
+}
+
+.contacto_principal{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.contacto_contenido li{
+    margin-bottom: 15px; 
+}
+
+.contacto_contenido li a{
+    display: block;
+    font-size: var(--fuente-p);
+    color: var(--bg-color);
+    font-weight: 600;
+    transition: all .70s ease;
+}
+
+.contacto_contenido li a:hover{
+   transform: translateY(-10px);
+}
+
+.formulario form{
+    text-align: center; 
+}
+
+.formulario form input[type="email"]{
+    width: 450px;
+    max-width: 100%;
+    padding: 12px 15px;
+    background: #515151;
+    color: var(--bg-color);
+    
+    border:none;
+    border-radius: 15px;
+    
+}
+
+.formulario form input[type="submit"]{
+    padding: 10px 35px;
+    background: var(--bg-color);
+    color: var(--fuente-pr);
+
+    margin: 0px 10px 20px 0px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+.final{
+    text-align: center;
+    padding: 15px;
+    background-color: var(--color-texto);
+    color: white;
+    font-size: 15px;
+}
+
+
+/* Media Queries */
+
+@media (max-width: 800px){
+
+    #menu{
+        display: block;
+        cursor: pointer;  
+        text-align: left;              
+    }  
+    
+    .logo{
+        display: none;
+    }
+
+    header{
+        padding: 15px 8%;
+    }
+
+    .navBar{
+        width: 50%;
+        top: -500px;
+        left: 15px;
+        right: 5px;
+        position: absolute;
+        flex-direction: column;
+        background: var(--bg-color);        
+        transition: all .40s ease; 
+        box-shadow: 0px 2px 18px 0 rgb(129 162 182 / 20%); 
+        
+        border-radius: 15px;
+        
+    }
+
+    .navBar a{
+        display: block; 
+        padding: 1rem;  
+        margin: 0.5rem;      
+    }
+
+    .navBar.active{
+        top: 100%;      
+    }
+}
